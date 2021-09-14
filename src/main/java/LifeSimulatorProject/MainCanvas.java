@@ -1,9 +1,37 @@
 package LifeSimulatorProject;
+import LifeSimulatorProject.cell.Cell;
+import LifeSimulatorProject.cell.CellService;
+
+import static LifeSimulatorProject.config.Config.COLS;
+import static LifeSimulatorProject.config.Config.ROWS;
+import static LifeSimulatorProject.config.Config.SIZE;
 
 import java.awt.*;
 
 public class MainCanvas extends Canvas {
+
+    CellService cellService = new CellService();
+
     public MainCanvas() {
-        setSize(600, 400);
+        setSize(COLS*SIZE,ROWS*SIZE);
+    }
+
+    @Override
+    public void paint(Graphics g) {
+
+        for (Cell cell : cellService.getAllCells()) {
+
+            if(cell.isLife()) {
+                g.setColor(Color.GREEN);
+            } else {
+                g.setColor(Color.WHITE);
+            }
+
+            int x = cell.getX() * SIZE;
+            int y = cell.getY() * SIZE;
+            g.fillRect(x, y,
+                    SIZE -1, SIZE-1);
+
+        }
     }
 }

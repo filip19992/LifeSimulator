@@ -1,4 +1,4 @@
-package LifeSimulatorProject.Cell;
+package LifeSimulatorProject.cell;
 
 public class Cell {
     private final int x;

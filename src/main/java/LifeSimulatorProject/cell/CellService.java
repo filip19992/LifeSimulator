@@ -1,13 +1,10 @@
-package LifeSimulatorProject.Cell;
-
-import LifeSimulatorProject.Cell.Cell;
+package LifeSimulatorProject.cell;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
-import static LifeSimulatorProject.Config.COLS;
-import static LifeSimulatorProject.Config.ROWS;
+import static LifeSimulatorProject.config.Config.COLS;
+import static LifeSimulatorProject.config.Config.ROWS;
 
 
 public class CellService {
@@ -17,17 +14,14 @@ public class CellService {
     public CellService() {
 
         for (int i = 0; i < ROWS; i ++) {
-            for (int j = 0; j < COLS; i++) {
+            for (int j = 0; j < COLS; j++) {
                 cells.add(new Cell(j, i));
             }
         }
 
         getByCords(3, 6).setLife(true);
+        getByCords(4, 6).setLife(true);
         getByCords(5, 6).setLife(true);
-        getByCords(3, 6).setLife(true);
-        getByCords(6, 10).setLife(true);
-        getByCords(2, 1).setLife(true);
-        getByCords(16, 40).setLife(true);
     }
 
    public Cell getByCords(int x, int y) {
