@@ -29,16 +29,12 @@ public class Cell {
 
     public boolean isNeighbor(Cell cell) {
 
-        if(cell.getX() == x && cell.getY() == y) {
+        if (cell == this) {
             return false;
         }
 
-        if(cell.getX() >= x + 1 && cell.getX() >= x - 1 &&
-                cell.getY() >= x + 1 && cell.getY() >= x - 1) {
-            return true;
-        } else {
-            return false;
-        }
+        return cell.getX() <= x + 1 && cell.getX() >= x - 1 &&
+                cell.getY() <= y + 1 && cell.getY() >= y - 1;
+
     }
-
 }
