@@ -10,9 +10,13 @@ import java.awt.*;
 
 public class MainCanvas extends Canvas {
 
-    CellService cellService = new CellService();
+   private final CellService cellService = CellService.getInstance();
 
-    public MainCanvas() {
+   private static final MainCanvas INSTANCE = new MainCanvas();
+
+
+
+    private MainCanvas() {
         setSize(COLS*SIZE,ROWS*SIZE);
     }
 
@@ -33,5 +37,9 @@ public class MainCanvas extends Canvas {
                     SIZE -1, SIZE-1);
 
         }
+    }
+
+    public static MainCanvas getINSTANCE() {
+        return INSTANCE;
     }
 }

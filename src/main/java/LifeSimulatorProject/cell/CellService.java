@@ -1,5 +1,7 @@
 package LifeSimulatorProject.cell;
 
+import LifeSimulatorProject.MainCanvas;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +13,11 @@ public class CellService {
 
     private final List<Cell> cells = new ArrayList<>();
 
-    public CellService() {
+    private static final CellService INSTANCE = new CellService();
+
+    private static final MainCanvas mainCanvas = MainCanvas.getINSTANCE();
+
+    private CellService() {
 
         for (int i = 0; i < ROWS; i ++) {
             for (int j = 0; j < COLS; j++) {
@@ -22,6 +28,10 @@ public class CellService {
         getByCords(3, 6).setLife(true);
         getByCords(4, 6).setLife(true);
         getByCords(5, 6).setLife(true);
+    }
+
+    public static CellService getInstance() {
+        return INSTANCE;
     }
 
    public Cell getByCords(int x, int y) {
