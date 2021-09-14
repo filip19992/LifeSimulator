@@ -12,7 +12,7 @@ public class MainFrame extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
 
-        MainCanvas mainCanvas = MainCanvas.getINSTANCE();
+        MainCanvas mainCanvas = MainCanvas.getInstance();
         add(mainCanvas);
         pack();
         setLocationRelativeTo(null);

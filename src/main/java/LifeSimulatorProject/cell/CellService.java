@@ -15,7 +15,7 @@ public class CellService {
 
     private static final CellService INSTANCE = new CellService();
 
-    private static final MainCanvas mainCanvas = MainCanvas.getINSTANCE();
+    private static final MainCanvas mainCanvas = MainCanvas.getInstance();
 
     private CellService() {
 
@@ -42,5 +42,21 @@ public class CellService {
 
     public List<Cell> getAllCells() {
         return cells;
+    }
+
+    public void update() {
+        List<Cell> newCells = new ArrayList<>();
+        List<Cell> deadCells = new ArrayList<>();
+
+       for(Cell cell:cells) {
+           long aliveNeighborCells = cells.stream().
+                   filter(cell::isNeighbor).filter(Cell::isLife).count();
+
+           if(aliveNeighborCells < 2 || aliveNeighborCells > 3) {
+               deadCells.add(cell);
+           }
+
+
+       }
     }
 }

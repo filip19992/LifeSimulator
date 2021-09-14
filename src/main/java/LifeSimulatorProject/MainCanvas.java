@@ -39,7 +39,7 @@ public class MainCanvas extends Canvas {
         }
     }
 
-    public static MainCanvas getINSTANCE() {
+    public static MainCanvas getInstance() {
         return INSTANCE;
     }
 }

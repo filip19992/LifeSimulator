@@ -26,4 +26,19 @@ public class Cell {
     public void setLife(boolean life) {
         this.life = life;
     }
+
+    public boolean isNeighbor(Cell cell) {
+
+        if(cell.getX() == x && cell.getY() == y) {
+            return false;
+        }
+
+        if(cell.getX() >= x + 1 && cell.getX() >= x - 1 &&
+                cell.getY() >= x + 1 && cell.getY() >= x - 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
