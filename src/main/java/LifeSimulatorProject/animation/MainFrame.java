@@ -1,4 +1,4 @@
-package LifeSimulatorProject;
+package LifeSimulatorProject.animation;
 
 import javax.swing.*;
 import java.awt.*;

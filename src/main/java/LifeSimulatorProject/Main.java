@@ -1,5 +1,6 @@
 package LifeSimulatorProject;
 
+import LifeSimulatorProject.animation.MainFrame;
 import LifeSimulatorProject.config.MyTimer;
 
 import java.awt.*;

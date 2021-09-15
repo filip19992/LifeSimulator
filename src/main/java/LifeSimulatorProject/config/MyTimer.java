@@ -1,5 +1,5 @@
 package LifeSimulatorProject.config;
-import LifeSimulatorProject.MainCanvas;
+import LifeSimulatorProject.animation.MainCanvas;
 import LifeSimulatorProject.cell.CellService;
 
 import javax.swing.Timer;

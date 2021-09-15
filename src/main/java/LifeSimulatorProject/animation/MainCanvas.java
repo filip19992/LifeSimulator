@@ -1,4 +1,4 @@
-package LifeSimulatorProject;
+package LifeSimulatorProject.animation;
 import LifeSimulatorProject.cell.Cell;
 import LifeSimulatorProject.cell.CellService;
 
