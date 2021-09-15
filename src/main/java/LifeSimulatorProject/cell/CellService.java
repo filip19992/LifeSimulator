@@ -1,5 +1,9 @@
 package LifeSimulatorProject.cell;
 
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,9 +25,12 @@ public class CellService {
             }
         }
 
-        getByCords(4, 6).setLife(true);
-        getByCords(4, 7).setLife(true);
-        getByCords(4, 8).setLife(true);
+        try {
+            populate();
+        } catch (IOException e) {
+            System.out.println("Can't read file");
+        }
+
 
     }
 
@@ -68,6 +75,21 @@ public class CellService {
         }
         for (Cell cell : newCells) {
             cell.setLife(true);
+        }
+    }
+
+    private void populate() throws IOException {
+       String file = "crab.cells";
+        int y = 6;
+
+        for (String line : Files.readAllLines(Paths.get(file))) {
+            for (int x = 0; x < line.length(); x++) {
+                if (line.charAt(x) == 'O') {
+                    getByCords(x, y).setLife(true);
+                }
+
+            }
+            y++;
         }
     }
 }
